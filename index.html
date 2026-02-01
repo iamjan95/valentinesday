@@ -1,83 +1,71 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Will You Be My Valentine? 💘</title>
+  <title>Hey Kuttumma 💖</title>
   <style>
     body {
       height: 100vh;
+      margin: 0;
+      background: linear-gradient(135deg, #ffe6eb, #fff0f5);
       display: flex;
       justify-content: center;
       align-items: center;
-      background: #ffe6eb;
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Arial Rounded MT Bold', Arial, sans-serif;
     }
 
     .card {
       background: white;
-      padding: 40px;
-      border-radius: 20px;
+      padding: 40px 30px;
+      border-radius: 25px;
       text-align: center;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+      max-width: 380px;
+      animation: fadeIn 1.2s ease;
     }
 
     h1 {
       color: #ff4d6d;
+      font-size: 32px;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-size: 18px;
+      color: #555;
       margin-bottom: 30px;
     }
 
     button {
-      font-size: 18px;
-      padding: 10px 25px;
-      margin: 10px;
+      padding: 12px 28px;
+      font-size: 16px;
       border: none;
       border-radius: 30px;
+      background: #ff4d6d;
+      color: white;
       cursor: pointer;
       transition: 0.3s;
     }
 
-    #yes {
-      background: #ff4d6d;
-      color: white;
+    button:hover {
+      transform: scale(1.08);
     }
 
-    #no {
-      background: #ddd;
-      position: absolute;
-    }
-
-    #message {
-      margin-top: 25px;
-      font-size: 22px;
-      color: #ff4d6d;
-      display: none;
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
     }
   </style>
 </head>
 <body>
   <div class="card">
-    <h1>Will you be my Valentine? 💖</h1>
-    <button id="yes">YES 💕</button>
-    <button id="no">NO 😭</button>
-    <div id="message">YAY!! 💘💘💘</div>
+    <h1>Hey Kuttumma 🌸</h1>
+    <p>I made something for you…</p>
+    <button onclick="window.location.href='valentine.html'">
+      Tap here 💌
+    </button>
   </div>
-
-  <script>
-    const noBtn = document.getElementById("no");
-    const yesBtn = document.getElementById("yes");
-    const message = document.getElementById("message");
-
-    noBtn.addEventListener("mouseover", () => {
-      const x = Math.random() * (window.innerWidth - 100);
-      const y = Math.random() * (window.innerHeight - 50);
-      noBtn.style.left = x + "px";
-      noBtn.style.top = y + "px";
-    });
-
-    yesBtn.addEventListener("click", () => {
-      message.style.display = "block";
-    });
-  </script>
 </body>
 </html>
-
